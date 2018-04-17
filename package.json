@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint ./src ./tests",
     "build": "NODE_ENV=production webpack --progress",
-    "test": "NODE_ENV=test jest",
+    "test": "NODE_ENV=testing jest --coverage --ci --runInBand && cat ./coverage/lcov.info | coveralls",
     "test:watch": "NODE_ENV=test jest",
     "profile": "webpack --json | webpack-bundle-size-analyzer"
   },
@@ -20,6 +20,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
+    "coveralls": "^3.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
