@@ -1,0 +1,245 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.5.0",
+  "hash": "b789940665df13f0ef99",
+  "time": 391,
+  "builtAt": 1523731073174,
+  "publicPath": "",
+  "outputPath": "/Users/javi/code/simple-react-store/dist",
+  "assetsByChunkName": {
+    "main": "simple-react-store.js"
+  },
+  "assets": [
+    {
+      "name": "simple-react-store.js",
+      "size": 3220,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "emitted": true
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "main": {
+      "chunks": [
+        0
+      ],
+      "assets": [
+        "simple-react-store.js"
+      ]
+    }
+  },
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "size": 5022,
+      "names": [
+        "main"
+      ],
+      "files": [
+        "simple-react-store.js"
+      ],
+      "hash": "c96b8755fd5ac5ffd7cf",
+      "siblings": [],
+      "parents": [],
+      "children": [],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "external {\"commonjs\":\"react\",\"commonjs2\":\"react\",\"amd\":\"react\",\"root\":\"react\"}",
+          "name": "external {\"commonjs\":\"react\",\"commonjs2\":\"react\",\"amd\":\"react\",\"root\":\"react\"}",
+          "index": 1,
+          "index2": 0,
+          "size": 42,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "issuer": "/Users/javi/code/simple-react-store/node_modules/babel-loader/lib/index.js?cacheDirectory!/Users/javi/code/simple-react-store/src/index.js",
+          "issuerId": 1,
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "id": 1,
+              "identifier": "/Users/javi/code/simple-react-store/node_modules/babel-loader/lib/index.js?cacheDirectory!/Users/javi/code/simple-react-store/src/index.js",
+              "name": "./src/index.js"
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": 1,
+              "moduleIdentifier": "/Users/javi/code/simple-react-store/node_modules/babel-loader/lib/index.js?cacheDirectory!/Users/javi/code/simple-react-store/src/index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "type": "cjs require",
+              "userRequest": "react",
+              "loc": "10:13-29"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 1
+        },
+        {
+          "id": 1,
+          "identifier": "/Users/javi/code/simple-react-store/node_modules/babel-loader/lib/index.js?cacheDirectory!/Users/javi/code/simple-react-store/src/index.js",
+          "name": "./src/index.js",
+          "index": 0,
+          "index2": 1,
+          "size": 4980,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "./src/index.js",
+              "loc": "main"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 0,
+          "source": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.connectDevTools = exports.Store = undefined;\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Store = exports.Store = function () {\n  function Store(initialState) {\n    _classCallCheck(this, Store);\n\n    this.state = initialState || {};\n    this.subscribers = [];\n  }\n\n  _createClass(Store, [{\n    key: 'notifySubscribers',\n    value: function notifySubscribers(updatedState, actionName) {\n      this.subscribers.forEach(function (subscriber) {\n        subscriber(updatedState, actionName);\n      });\n    }\n  }, {\n    key: 'setState',\n    value: function setState(updatedState, actionName) {\n      if (this.state !== updatedState) {\n        this.state = updatedState;\n        this.notifySubscribers(updatedState, actionName);\n      }\n    }\n  }, {\n    key: 'getState',\n    value: function getState() {\n      return this.state;\n    }\n  }, {\n    key: 'onUpdate',\n    value: function onUpdate(cb) {\n      this.subscribers.push(cb);\n    }\n  }, {\n    key: 'unsubscribe',\n    value: function unsubscribe(cb) {\n      this.subscribers = this.subscribers.filter(function (subscriber) {\n        return subscriber !== cb;\n      });\n    }\n  }, {\n    key: 'connect',\n    value: function connect(resolveProps) {\n      var store = this;\n      return function (Component) {\n        var DynamicComponent = function (_React$Component) {\n          _inherits(DynamicComponent, _React$Component);\n\n          function DynamicComponent() {\n            var _ref;\n\n            var _temp, _this, _ret;\n\n            _classCallCheck(this, DynamicComponent);\n\n            for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {\n              args[_key] = arguments[_key];\n            }\n\n            return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = DynamicComponent.__proto__ || Object.getPrototypeOf(DynamicComponent)).call.apply(_ref, [this].concat(args))), _this), _this.state = resolveProps(store.getState()), _this.handleUpdateChange = function (updatedState) {\n              _this.setState(resolveProps(updatedState));\n            }, _temp), _possibleConstructorReturn(_this, _ret);\n          }\n\n          _createClass(DynamicComponent, [{\n            key: 'componentDidMount',\n            value: function componentDidMount() {\n              store.onUpdate(this.handleUpdateChange);\n            }\n          }, {\n            key: 'componentWillUnmount',\n            value: function componentWillUnmount() {\n              store.unsubscribe(this.handleUpdateChange);\n            }\n          }, {\n            key: 'render',\n            value: function render() {\n              return _react2.default.createElement(Component, this.state);\n            }\n          }]);\n\n          return DynamicComponent;\n        }(_react2.default.Component);\n\n        return DynamicComponent;\n      };\n    }\n  }]);\n\n  return Store;\n}();\n\nvar connectDevTools = exports.connectDevTools = function connectDevTools(store) {\n  var devToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION__;\n  if (devToolsExtension) {\n    var devTools = devToolsExtension.connect({});\n    devTools.init(store.getState());\n    store.onUpdate(function (state) {\n      var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'Anonymous action';\n\n      devTools.send(action, state);\n    });\n  }\n};"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "module": "",
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "loc": "main",
+          "request": "./src/index.js",
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": 0,
+      "identifier": "external {\"commonjs\":\"react\",\"commonjs2\":\"react\",\"amd\":\"react\",\"root\":\"react\"}",
+      "name": "external {\"commonjs\":\"react\",\"commonjs2\":\"react\",\"amd\":\"react\",\"root\":\"react\"}",
+      "index": 1,
+      "index2": 0,
+      "size": 42,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "issuer": "/Users/javi/code/simple-react-store/node_modules/babel-loader/lib/index.js?cacheDirectory!/Users/javi/code/simple-react-store/src/index.js",
+      "issuerId": 1,
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "id": 1,
+          "identifier": "/Users/javi/code/simple-react-store/node_modules/babel-loader/lib/index.js?cacheDirectory!/Users/javi/code/simple-react-store/src/index.js",
+          "name": "./src/index.js"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": 1,
+          "moduleIdentifier": "/Users/javi/code/simple-react-store/node_modules/babel-loader/lib/index.js?cacheDirectory!/Users/javi/code/simple-react-store/src/index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "type": "cjs require",
+          "userRequest": "react",
+          "loc": "10:13-29"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 1
+    },
+    {
+      "id": 1,
+      "identifier": "/Users/javi/code/simple-react-store/node_modules/babel-loader/lib/index.js?cacheDirectory!/Users/javi/code/simple-react-store/src/index.js",
+      "name": "./src/index.js",
+      "index": 0,
+      "index2": 1,
+      "size": 4980,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "issuerPath": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": null,
+          "moduleIdentifier": null,
+          "module": null,
+          "moduleName": null,
+          "type": "single entry",
+          "userRequest": "./src/index.js",
+          "loc": "main"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 0,
+      "source": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.connectDevTools = exports.Store = undefined;\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Store = exports.Store = function () {\n  function Store(initialState) {\n    _classCallCheck(this, Store);\n\n    this.state = initialState || {};\n    this.subscribers = [];\n  }\n\n  _createClass(Store, [{\n    key: 'notifySubscribers',\n    value: function notifySubscribers(updatedState, actionName) {\n      this.subscribers.forEach(function (subscriber) {\n        subscriber(updatedState, actionName);\n      });\n    }\n  }, {\n    key: 'setState',\n    value: function setState(updatedState, actionName) {\n      if (this.state !== updatedState) {\n        this.state = updatedState;\n        this.notifySubscribers(updatedState, actionName);\n      }\n    }\n  }, {\n    key: 'getState',\n    value: function getState() {\n      return this.state;\n    }\n  }, {\n    key: 'onUpdate',\n    value: function onUpdate(cb) {\n      this.subscribers.push(cb);\n    }\n  }, {\n    key: 'unsubscribe',\n    value: function unsubscribe(cb) {\n      this.subscribers = this.subscribers.filter(function (subscriber) {\n        return subscriber !== cb;\n      });\n    }\n  }, {\n    key: 'connect',\n    value: function connect(resolveProps) {\n      var store = this;\n      return function (Component) {\n        var DynamicComponent = function (_React$Component) {\n          _inherits(DynamicComponent, _React$Component);\n\n          function DynamicComponent() {\n            var _ref;\n\n            var _temp, _this, _ret;\n\n            _classCallCheck(this, DynamicComponent);\n\n            for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {\n              args[_key] = arguments[_key];\n            }\n\n            return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = DynamicComponent.__proto__ || Object.getPrototypeOf(DynamicComponent)).call.apply(_ref, [this].concat(args))), _this), _this.state = resolveProps(store.getState()), _this.handleUpdateChange = function (updatedState) {\n              _this.setState(resolveProps(updatedState));\n            }, _temp), _possibleConstructorReturn(_this, _ret);\n          }\n\n          _createClass(DynamicComponent, [{\n            key: 'componentDidMount',\n            value: function componentDidMount() {\n              store.onUpdate(this.handleUpdateChange);\n            }\n          }, {\n            key: 'componentWillUnmount',\n            value: function componentWillUnmount() {\n              store.unsubscribe(this.handleUpdateChange);\n            }\n          }, {\n            key: 'render',\n            value: function render() {\n              return _react2.default.createElement(Component, this.state);\n            }\n          }]);\n\n          return DynamicComponent;\n        }(_react2.default.Component);\n\n        return DynamicComponent;\n      };\n    }\n  }]);\n\n  return Store;\n}();\n\nvar connectDevTools = exports.connectDevTools = function connectDevTools(store) {\n  var devToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION__;\n  if (devToolsExtension) {\n    var devTools = devToolsExtension.connect({});\n    devTools.init(store.getState());\n    store.onUpdate(function (state) {\n      var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'Anonymous action';\n\n      devTools.send(action, state);\n    });\n  }\n};"
+    }
+  ],
+  "filteredModules": 0,
+  "children": []
+}

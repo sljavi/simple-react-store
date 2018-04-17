@@ -1,0 +1,55 @@
+{
+  "name": "simple-react-store",
+  "description": "A simplified redux store for react",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint ./src ./tests",
+    "build": "NODE_ENV=production webpack --progress",
+    "test": "NODE_ENV=test jest",
+    "test:watch": "NODE_ENV=test jest",
+    "profile": "webpack --json | webpack-bundle-size-analyzer"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-jest": "^22.4.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-babel": "^5.0.0",
+    "eslint-plugin-class-property": "^1.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "jest": "^22.4.3",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "regenerator-runtime": "^0.11.1",
+    "webpack": "^4.5.0",
+    "webpack-bundle-size-analyzer": "^2.7.0",
+    "webpack-cli": "^2.0.14"
+  },
+  "main": "dist/simple-react-store.js",
+  "module": "src/index.js",
+  "author": "Javier Perez",
+  "bugs": {
+    "url": "https://github.com/sljavi/simple-react-store/issues"
+  },
+  "homepage": "https://github.com/sljavi/simple-react-store",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sljavi/simple-react-store.git"
+  },
+  "peerDependencies": {
+    "react": ">= 14.x.x"
+  },
+  "keywords": []
+}

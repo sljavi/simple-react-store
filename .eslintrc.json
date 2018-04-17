@@ -1,0 +1,17 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "plugins": ["react", "class-property"],
+  "rules": {
+    "class-property/class-property-semicolon": ["error", "never"],
+    "semi": ["error", "never"],
+    "no-shadow": [0],
+    "react/jsx-filename-extension": ["error", { "extensions": [".js"] }],
+    "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION__"] }],
+    "comma-dangle": ["error", "never"]
+  }
+}
