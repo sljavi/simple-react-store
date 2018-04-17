@@ -63,8 +63,8 @@ export const connectDevTools = (store) => {
   if (devToolsExtension) {
     const devTools = devToolsExtension.connect({})
     devTools.init(store.getState())
-    store.onUpdate((state, action = 'Anonymous action') => {
-      devTools.send(action, state)
+    store.onUpdate((state, action) => {
+      devTools.send(action || 'Anonymous action', state)
     })
   }
 }
