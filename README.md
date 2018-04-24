@@ -97,16 +97,14 @@ Saves the new state into the store. Remember keep your states immutable.
 ```javascript
 import { Store } from 'simple-react-store'
 
-const aStore = new Store({
-  name: 'John Doe',
-  user: 'john.dow'
-})
+const aStore = new Store()
 
-const updatedState = {
-  ...aStore.getState(),
+const newState = {
+  name: 'John Doe',
+  user: 'john.dow',
   nationality: 'argentinian'
 }
-aStore.setState(updatedState, 'Set user nationality')
+aStore.setState(newState, 'Set user nationality')
 
 console.log(aStore.getState())
 // {
