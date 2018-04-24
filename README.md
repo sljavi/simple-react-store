@@ -91,6 +91,7 @@ Saves the new state into the store. Remember keep your states immutable.
 ##### Arguments
 
 `someState (any)`: The state you want to save.
+
 `actionName (string)['']`: Optionally you can identified the state change with an action name. The name will be shared with all the state change subscribers and redux dev tools.
 
 ##### Example
@@ -120,6 +121,7 @@ Produce and save a new immutable state based on the current state.
 ##### Arguments
 
 `stateProducer (function)`: A function that will received the next state as a parameter and can be mutated. Simple react store will use [immer](https://github.com/mweststrate/immer) to generate the immutable state.
+
 `actionName (string)['']`: Optionally you can identified the state change with an action name. The name will be shared with all the state change subscribers and redux dev tools.
 
 ##### Example
@@ -152,6 +154,7 @@ Subscribes for state changes
 
 ###### Callback arguments
 `state (any)`: The saved state.
+
 `actionName (string)`: Action name set when updated the state
 
 ##### Example
@@ -177,6 +180,7 @@ Updates the props of a react component every time there is a new state
 
 ##### Arguments
 `resolvePropsCallback (function(state, [ownProps]))`: The function that will be executed any time there is a new state. It has to return an object of props.
+
 `Component (React Component)`: The react component that will receive the props resolved by `resolvePropsCallback`
 
 ##### Returns
