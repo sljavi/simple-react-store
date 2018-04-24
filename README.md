@@ -22,6 +22,7 @@ Simple React Store is a simplified version of Redux
 |State updates |Directly setting the new state | Via reducers and actions|
 |Action Dispatching | No needed| Required|
 |Action Types | Optional when updating state | Required |
+|Immutable state updates| ✅ | ❌ |
 |Reducers | No needed| Required |
 |Async Actions | Using plain simple js calls | Using some library (i.e. redux-thunk)|
 |State change subscriptions |✅|✅|
@@ -85,8 +86,7 @@ console.log(aStore.getState())
 
 ### Update state
 #### aStore.setState(someState, actionName = '')
-Saves the new state into the store. Remember keep your states inmutable. 
-Consider use [immutable.js](https://facebook.github.io/immutable-js/) for it.
+Saves the new state into the store. Remember keep your states immutable.
 
 ##### Arguments
 
@@ -107,6 +107,35 @@ const updatedState = {
   nationality: 'argentinian'
 }
 aStore.setState(updatedState, 'Set user nationality')
+
+console.log(aStore.getState())
+// {
+//  name: 'John Doe',
+//  user: 'john.dow'
+//  nationality: 'argentinian'
+// }
+```
+
+#### aStore.updateState(stateProducer, actionName = '')
+Produce and save a new immutable state based on the current state.
+
+##### Arguments
+
+`stateProducer (function)`: A function that will received the next state as a parameter and can be mutated. Simple react store will use [immer](https://github.com/mweststrate/immer) to generate the immutable state.
+`actionName (string)['']`: Optionally you can identified the state change with an action name. The name will be shared with all the state change subscribers and redux dev tools.
+
+##### Example
+```javascript
+import { Store } from 'simple-react-store'
+
+const aStore = new Store({
+  name: 'John Doe',
+  user: 'john.dow'
+})
+
+aStore.updatedState((nextState) => {
+  nextState.nationality = 'argentinian'
+})
 
 console.log(aStore.getState())
 // {

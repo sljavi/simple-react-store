@@ -20,13 +20,27 @@ describe('Store', () => {
   })
 
   describe('setState', () => {
-    it('set a new state', () => {
+    it('sets a new state', () => {
       const store = new Store()
       const state = {
         foo: 'bar'
       }
       store.setState(state)
       expect(store.getState()).toEqual(state)
+    })
+  })
+
+  describe('updateState', () => {
+    it('updates the current state', () => {
+      const store = new Store({
+        foo: 'bar'
+      })
+      store.updateState((nextState) => {
+        nextState.foo = 'is not bar'
+      })
+      expect(store.getState()).toEqual({
+        foo: 'is not bar'
+      })
     })
   })
 

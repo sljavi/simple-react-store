@@ -1,4 +1,5 @@
 import React from 'react'
+import produceImmutableState from 'immer'
 
 export class Store {
   constructor(initialState) {
@@ -17,6 +18,11 @@ export class Store {
       this.state = updatedState
       this.notifySubscribers(updatedState, actionName)
     }
+  }
+
+  updateState(callback, actionName = '') {
+    const updatedState = produceImmutableState(this.state, callback)
+    this.setState(updatedState, actionName)
   }
 
   getState() {
