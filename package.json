@@ -1,7 +1,7 @@
 {
   "name": "simple-react-store",
   "description": "A simplified redux store for react",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "license": "MIT",
   "scripts": {
     "lint": "eslint ./src ./tests",

@@ -44,15 +44,19 @@ export class Store {
         state = resolveProps(store.getState(), this.props)
 
         componentDidMount() {
-          store.onUpdate(this.handleUpdateChange)
+          store.onUpdate(this.handleUpdateChange.bind(this))
+        }
+
+        componentWillReceiveProps(newProps) {
+          this.setState(resolveProps(store.getState(), newProps))
         }
 
         componentWillUnmount() {
-          store.unsubscribe(this.handleUpdateChange)
+          store.unsubscribe(this.handleUpdateChange.bind(this))
         }
 
         handleUpdateChange = (updatedState) => {
-          this.setState(resolveProps(updatedState))
+          this.setState(resolveProps(updatedState, this.props))
         }
 
         render() {
