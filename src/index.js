@@ -41,7 +41,7 @@ export class Store {
     const store = this
     return (Component) => {
       class DynamicComponent extends React.Component {
-        state = resolveProps(store.getState())
+        state = resolveProps(store.getState(), this.props)
 
         componentDidMount() {
           store.onUpdate(this.handleUpdateChange)
